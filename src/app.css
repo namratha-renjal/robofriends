@@ -1,0 +1,11 @@
+@font-face{
+    font-family: 'BREWSKY';
+    font-style: normal ;
+    font-weight: normal;
+    src: url('assets/Brewsky.woff') format('woff');
+}
+h1{
+    font-family: 'BREWSKY';
+    font-weight: 400;
+    color: #0ccac4
+}

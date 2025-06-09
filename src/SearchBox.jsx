@@ -6,7 +6,7 @@ const SearchBox = ({searchFeild, searchChange}) => {
             <input 
                 className="pa3 ba b--green bg-lightest-blue"
                 type="search" 
-                placeholder="Search Robots"
+                placeholder="Search Cats"
                 onChange = {searchChange} //onChange is a React event handler, not onchange
             />
         </div>
