@@ -1,6 +1,7 @@
 import React from "react";
-import CardList from "./CardList";
-import SearchBox from "./SearchBox";
+import CardList from "./components/CardList";
+import SearchBox from "./components/SearchBox";
+import Scroll from "./components/Scroll";
 //import { robots } from './Robots' //destructured becqause robots is not default export
 import './App.css';
 
@@ -29,20 +30,23 @@ class App extends React.Component{
     }
 
     render() {
-        const filteredRobots = this.state.robots.filter(robot => (
-            robot.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
+        const { robots, searchfield } = this.state; //destructuring state
+        const filteredRobots = robots.filter(robot => (
+            robot.name.toLowerCase().includes(searchfield.toLowerCase())
         ));
         //console.log(filteredRobots);
         console.log('render');
         //if robots is a huge database and it takes time to load it
-        if (this.state.robots.length === 0) {
+        if (!robots.length) {
             return <h1 className='f1'>Loading...</h1>
-        }else{
+        } else {
             return(
             <div className="tc"> 
                 <h1 className='f1'>CatFriends</h1>
                 <SearchBox searchChange = {this.onSearchChange}/>
-                <CardList robots={filteredRobots}/>
+                <Scroll>
+                    <CardList robots={filteredRobots}/>
+                </Scroll>
             </div>
         )}
     }
