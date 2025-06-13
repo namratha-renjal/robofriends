@@ -13,13 +13,18 @@ const CardList = ({robots}) => {
     //         />
     //     )   
     // })
+
+  /*   if(true) {
+        throw new Error('Nooooooo!');
+    } */
+
     return (
         <>
             {
                 robots.map((user, i) => {
                     return (
                         <Card 
-                            key={user.id} //using key to uniquely identify each element in the list
+                            key={i} //using key to uniquely identify each element in the list
                             id={user.id} 
                             name={user.name} 
                             email={user.email}
